@@ -1,5 +1,5 @@
 #PHP - Apache 
-FROM php:7.3-apache
+FROM php:8.4-apache
 
 RUN apt-get update && \
     apt-get upgrade -y && \
@@ -22,9 +22,7 @@ RUN apt-get -y update \
 #install some base extensions
 RUN apt-get install -y \
         libzip-dev \
-        zip \
-  && docker-php-ext-configure zip --with-libzip \
-  && docker-php-ext-install zip
+        zip 
 
 RUN docker-php-ext-install mysqli pdo_mysql
 
