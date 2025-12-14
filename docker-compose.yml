@@ -22,6 +22,7 @@ services:
       MYSQL_ROOT_PASSWORD: brasil
     volumes:
       - ./.docker/mysql/:/var/lib/mysql/
+      - ./vhost/:/etc/apache2/sites-available/
     ports:
       - 3306:3306
   mailhog:
